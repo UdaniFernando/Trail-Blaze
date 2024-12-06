@@ -11,7 +11,7 @@ import SwiftUI
 struct Trail_BlazeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
