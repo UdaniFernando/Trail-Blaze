@@ -19,7 +19,7 @@ struct DestinationView: View {
         VStack {
             // Card at the top
             CardView(card: card, isOnStack: false)
-                .frame(height: 200)
+                .frame(height: 300)
                 .matchedGeometryEffect(id: card.imageName.hashValue, in: animationNamespace)
                 .offset(y: dragOffset)
                 .gesture(
@@ -52,7 +52,7 @@ struct DestinationView: View {
             
             Spacer()
         }
-        .background(Color.white.ignoresSafeArea())
+        .ignoresSafeArea()
     }
 }
 

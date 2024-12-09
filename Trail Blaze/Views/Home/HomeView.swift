@@ -16,22 +16,8 @@ struct HomeView: View {
     
     @State var isFirstAppearance : Bool = true
     
-    let cards: [Card] = [
-        Card(title: "Card 1", description: "Description for card 1", imageName: "thailand"),
-        Card(title: "Card 2", description: "Description for card 2", imageName: "northpole"),
-        Card(title: "Card 3", description: "Description for card 3", imageName: "norway"),
-        Card(title: "Card 4", description: "Description for card 3", imageName: "australia"),
-        Card(title: "Card 5", description: "Description for card 3", imageName: "dubai"),
-        Card(title: "Card 6", description: "Description for card 3", imageName: "singapore"),
-        Card(title: "Card 7", description: "Description for card 3", imageName: "japan"),
-        Card(title: "Card 1", description: "Description for card 1", imageName: "thailand"),
-        Card(title: "Card 2", description: "Description for card 2", imageName: "northpole"),
-        Card(title: "Card 3", description: "Description for card 3", imageName: "norway"),
-        Card(title: "Card 4", description: "Description for card 3", imageName: "australia"),
-        Card(title: "Card 5", description: "Description for card 3", imageName: "dubai"),
-        Card(title: "Card 6", description: "Description for card 3", imageName: "singapore"),
-        Card(title: "Card 7", description: "Description for card 3", imageName: "japan")
-    ]
+  
+    @StateObject var homeVM : HomeViewModel = HomeViewModel()
     
     @Namespace private var animationNamespace
     
@@ -40,8 +26,8 @@ struct HomeView: View {
             if !navigateToDetail {
                 // Home View
                 ZStack {
-                    ForEach(cards.indices, id: \.self) { index in
-                        CardView(card: cards[index])
+                    ForEach(homeVM.cards.indices, id: \.self) { index in
+                        CardView(card: homeVM.cards[index])
                             .frame(width: 200, height: 300)
                             .scaleEffect(index == selectedIndex ? 1.0 : 0.9)
                             .offset(
@@ -50,12 +36,12 @@ struct HomeView: View {
                             )
                             .zIndex(index == selectedIndex ? 1 : 0)
                             .animation(.spring(), value: selectedIndex)
-                            .matchedGeometryEffect(id: cards[index].imageName.hashValue, in: animationNamespace)
+                            .matchedGeometryEffect(id: homeVM.cards[index].imageName.hashValue, in: animationNamespace)
                             .gesture(
                                 DragGesture()
                                     .onEnded { value in
                                         let threshold: CGFloat = 100
-                                        if value.translation.width < -threshold, selectedIndex < cards.count - 1 {
+                                        if value.translation.width < -threshold, selectedIndex < homeVM.cards.count - 1 {
                                             selectedIndex += 1
                                         } else if value.translation.width > threshold, selectedIndex > 0 {
                                             selectedIndex -= 1
@@ -70,13 +56,13 @@ struct HomeView: View {
                 }
                 .onAppear {
                     if isFirstAppearance {
-                        selectedIndex = Int(cards.count / 2)
+                        selectedIndex = Int(homeVM.cards.count / 2)
                         isFirstAppearance = false
                     }
                 }
             } else {
                 // Detail View
-                DestinationView(card: cards[selectedIndex],
+                DestinationView(card: homeVM.cards[selectedIndex],
                                 animationNamespace: animationNamespace,
                                 onSwipeDown: {
                     withAnimation(.easeInOut) {
@@ -101,8 +87,9 @@ struct CardView: View {
             Image(card.imageName)
                 .resizable()
                 .scaledToFill()
-                .frame(width: isOnStack ? 200 : nil) 
+                .frame(width: isOnStack ? 200 : nil, height: isOnStack ? nil : 300)
                 .frame(maxWidth: isOnStack ? nil : .infinity)
+                
             Color.black.opacity(0.4)
         }
         .background(Color.white)
