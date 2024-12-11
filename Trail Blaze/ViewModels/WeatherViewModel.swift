@@ -39,7 +39,7 @@ class WeatherViewModel: ObservableObject {
 extension WeatherViewModel {
     func fetchWeather(for city: String) {
         let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString("Tokyo") { [weak self] placemarks, error in
+        geocoder.geocodeAddressString(city) { [weak self] placemarks, error in
             guard let self = self, let placemark = placemarks?.first, let location = placemark.location else {
                 DispatchQueue.main.async {
                     self?.description = "Unable to find location"

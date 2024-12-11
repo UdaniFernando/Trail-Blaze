@@ -27,6 +27,11 @@
 		A919E2442D06CF8E005AAA8D /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919E2432D06CF6C005AAA8D /* WeatherModel.swift */; };
 		A919E2462D06D10E005AAA8D /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919E2452D06D10E005AAA8D /* WeatherViewModel.swift */; };
 		A919E2492D06FFD1005AAA8D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919E2482D06FFC8005AAA8D /* LocationManager.swift */; };
+		A924FF242D097D2900D61746 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A924FF232D097D1E00D61746 /* LocalDataManager.swift */; };
+		A924FF262D0985F200D61746 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A924FF252D0985F200D61746 /* Color.swift */; };
+		A924FF292D098EE000D61746 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A924FF282D098EE000D61746 /* SceneKit.framework */; };
+		A924FF2E2D0990F000D61746 /* Globe3DView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A924FF2D2D0990F000D61746 /* Globe3DView.swift */; };
+		A924FF312D09913B00D61746 /* DestinationsSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A924FF302D09913B00D61746 /* DestinationsSelectionView.swift */; };
 		A98736BB2C9AE2E300ED4F60 /* Trail_BlazeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98736BA2C9AE2E300ED4F60 /* Trail_BlazeApp.swift */; };
 		A98736BD2C9AE2E300ED4F60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98736BC2C9AE2E300ED4F60 /* ContentView.swift */; };
 		A98736BF2C9AE2E300ED4F60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98736BE2C9AE2E300ED4F60 /* Assets.xcassets */; };
@@ -56,6 +61,11 @@
 		A919E2452D06D10E005AAA8D /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		A919E2472D06D2E7005AAA8D /* Trail Blaze.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Trail Blaze.entitlements"; sourceTree = "<group>"; };
 		A919E2482D06FFC8005AAA8D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A924FF232D097D1E00D61746 /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		A924FF252D0985F200D61746 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A924FF282D098EE000D61746 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
+		A924FF2D2D0990F000D61746 /* Globe3DView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globe3DView.swift; sourceTree = "<group>"; };
+		A924FF302D09913B00D61746 /* DestinationsSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsSelectionView.swift; sourceTree = "<group>"; };
 		A98736B72C9AE2E300ED4F60 /* Trail Blaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trail Blaze.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98736BA2C9AE2E300ED4F60 /* Trail_BlazeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trail_BlazeApp.swift; sourceTree = "<group>"; };
 		A98736BC2C9AE2E300ED4F60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A924FF292D098EE000D61746 /* SceneKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +92,7 @@
 		A917B60A2D0035A300A5EF48 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A924FF232D097D1E00D61746 /* LocalDataManager.swift */,
 				A919E2482D06FFC8005AAA8D /* LocationManager.swift */,
 			);
 			path = Managers;
@@ -89,6 +101,7 @@
 		A917B60B2D00360C00A5EF48 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A924FF252D0985F200D61746 /* Color.swift */,
 				A919E2412D02F80E005AAA8D /* Font.swift */,
 				A917B60E2D00363200A5EF48 /* View.swift */,
 			);
@@ -122,10 +135,35 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		A924FF272D098EE000D61746 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A924FF282D098EE000D61746 /* SceneKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A924FF2C2D0990CB00D61746 /* UIRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+				A924FF2D2D0990F000D61746 /* Globe3DView.swift */,
+			);
+			path = UIRepresentable;
+			sourceTree = "<group>";
+		};
+		A924FF2F2D09911E00D61746 /* Trails */ = {
+			isa = PBXGroup;
+			children = (
+				A924FF302D09913B00D61746 /* DestinationsSelectionView.swift */,
+			);
+			path = Trails;
+			sourceTree = "<group>";
+		};
 		A98736AE2C9AE2E300ED4F60 = {
 			isa = PBXGroup;
 			children = (
 				A98736B92C9AE2E300ED4F60 /* Trail Blaze */,
+				A924FF272D098EE000D61746 /* Frameworks */,
 				A98736B82C9AE2E300ED4F60 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,6 +179,7 @@
 		A98736B92C9AE2E300ED4F60 /* Trail Blaze */ = {
 			isa = PBXGroup;
 			children = (
+				A924FF2C2D0990CB00D61746 /* UIRepresentable */,
 				A919E2472D06D2E7005AAA8D /* Trail Blaze.entitlements */,
 				A919E2402D02F65B005AAA8D /* Trail-Blaze-Info.plist */,
 				A919E2272D02F572005AAA8D /* Fonts */,
@@ -168,6 +207,7 @@
 		A98736C82C9C078000ED4F60 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A924FF2F2D09911E00D61746 /* Trails */,
 				A919E2222D02E190005AAA8D /* Details */,
 				A917B6052CFEFB5300A5EF48 /* Home */,
 			);
@@ -278,10 +318,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A917B6072CFEFBC800A5EF48 /* CardsModel.swift in Sources */,
+				A924FF312D09913B00D61746 /* DestinationsSelectionView.swift in Sources */,
 				A917B60F2D00363200A5EF48 /* View.swift in Sources */,
 				A919E2262D02F23D005AAA8D /* HomeViewModel.swift in Sources */,
+				A924FF2E2D0990F000D61746 /* Globe3DView.swift in Sources */,
 				A919E2492D06FFD1005AAA8D /* LocationManager.swift in Sources */,
+				A924FF262D0985F200D61746 /* Color.swift in Sources */,
 				A98736BD2C9AE2E300ED4F60 /* ContentView.swift in Sources */,
+				A924FF242D097D2900D61746 /* LocalDataManager.swift in Sources */,
 				A919E2442D06CF8E005AAA8D /* WeatherModel.swift in Sources */,
 				A919E2462D06D10E005AAA8D /* WeatherViewModel.swift in Sources */,
 				A919E2422D02F80E005AAA8D /* Font.swift in Sources */,
