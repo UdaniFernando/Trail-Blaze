@@ -24,6 +24,9 @@
 		A919E23E2D02F58B005AAA8D /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A919E22D2D02F58B005AAA8D /* Roboto-Light.ttf */; };
 		A919E23F2D02F58B005AAA8D /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A919E2332D02F58B005AAA8D /* Roboto-ThinItalic.ttf */; };
 		A919E2422D02F80E005AAA8D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919E2412D02F80E005AAA8D /* Font.swift */; };
+		A919E2442D06CF8E005AAA8D /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919E2432D06CF6C005AAA8D /* WeatherModel.swift */; };
+		A919E2462D06D10E005AAA8D /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919E2452D06D10E005AAA8D /* WeatherViewModel.swift */; };
+		A919E2492D06FFD1005AAA8D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919E2482D06FFC8005AAA8D /* LocationManager.swift */; };
 		A98736BB2C9AE2E300ED4F60 /* Trail_BlazeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98736BA2C9AE2E300ED4F60 /* Trail_BlazeApp.swift */; };
 		A98736BD2C9AE2E300ED4F60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98736BC2C9AE2E300ED4F60 /* ContentView.swift */; };
 		A98736BF2C9AE2E300ED4F60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98736BE2C9AE2E300ED4F60 /* Assets.xcassets */; };
@@ -49,6 +52,10 @@
 		A919E2332D02F58B005AAA8D /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		A919E2402D02F65B005AAA8D /* Trail-Blaze-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Trail-Blaze-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A919E2412D02F80E005AAA8D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		A919E2432D06CF6C005AAA8D /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		A919E2452D06D10E005AAA8D /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		A919E2472D06D2E7005AAA8D /* Trail Blaze.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Trail Blaze.entitlements"; sourceTree = "<group>"; };
+		A919E2482D06FFC8005AAA8D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A98736B72C9AE2E300ED4F60 /* Trail Blaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trail Blaze.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98736BA2C9AE2E300ED4F60 /* Trail_BlazeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trail_BlazeApp.swift; sourceTree = "<group>"; };
 		A98736BC2C9AE2E300ED4F60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +81,7 @@
 		A917B60A2D0035A300A5EF48 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A919E2482D06FFC8005AAA8D /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 		A98736B92C9AE2E300ED4F60 /* Trail Blaze */ = {
 			isa = PBXGroup;
 			children = (
+				A919E2472D06D2E7005AAA8D /* Trail Blaze.entitlements */,
 				A919E2402D02F65B005AAA8D /* Trail-Blaze-Info.plist */,
 				A919E2272D02F572005AAA8D /* Fonts */,
 				A917B60B2D00360C00A5EF48 /* Extensions */,
@@ -168,6 +177,7 @@
 		A98736C92C9C078800ED4F60 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A919E2432D06CF6C005AAA8D /* WeatherModel.swift */,
 				A917B6062CFEFBC200A5EF48 /* CardsModel.swift */,
 			);
 			path = Models;
@@ -177,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				A919E2252D02F23D005AAA8D /* HomeViewModel.swift */,
+				A919E2452D06D10E005AAA8D /* WeatherViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -269,7 +280,10 @@
 				A917B6072CFEFBC800A5EF48 /* CardsModel.swift in Sources */,
 				A917B60F2D00363200A5EF48 /* View.swift in Sources */,
 				A919E2262D02F23D005AAA8D /* HomeViewModel.swift in Sources */,
+				A919E2492D06FFD1005AAA8D /* LocationManager.swift in Sources */,
 				A98736BD2C9AE2E300ED4F60 /* ContentView.swift in Sources */,
+				A919E2442D06CF8E005AAA8D /* WeatherModel.swift in Sources */,
+				A919E2462D06D10E005AAA8D /* WeatherViewModel.swift in Sources */,
 				A919E2422D02F80E005AAA8D /* Font.swift in Sources */,
 				A919E2242D02E1B6005AAA8D /* DestinationView.swift in Sources */,
 				A98736BB2C9AE2E300ED4F60 /* Trail_BlazeApp.swift in Sources */,
@@ -403,13 +417,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "Trail Blaze/Trail Blaze.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trail Blaze/Preview Content\"";
-				DEVELOPMENT_TEAM = ZK49M3GRKA;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZK49M3GRKA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Trail-Blaze-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Trail Blaze";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide weather data";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide weather data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -423,6 +444,8 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "lk.lucky.Trail-Blaze";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Trail Blaze Dev 11 Dec 2024 X";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -434,13 +457,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "Trail Blaze/Trail Blaze.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trail Blaze/Preview Content\"";
-				DEVELOPMENT_TEAM = ZK49M3GRKA;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = ZK49M3GRKA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Trail-Blaze-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Trail Blaze";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide weather data";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide weather data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +484,8 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "lk.lucky.Trail-Blaze";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Trail Blaze Dev 11 Dec 2024 X";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

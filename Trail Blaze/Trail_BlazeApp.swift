@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct Trail_BlazeApp: App {
+    @StateObject private var locationManager = LocationManager()
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .onAppear {
+                    if locationManager.authorizationStatus == .notDetermined {
+                        locationManager.requestPermission()
+                    }
+                }
         }
     }
 }

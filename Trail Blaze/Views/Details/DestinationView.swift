@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct DestinationView: View {
-     let card: Card
-     let animationNamespace: Namespace.ID
+    let card: Card
+    let animationNamespace: Namespace.ID
     let onSwipeDown: () -> Void
-     
-     @State private var showDetailContent = false
+    
+    @State private var showDetailContent = false
     @GestureState private var dragOffset: CGFloat = 0
-     
+    
+    @StateObject var weatherVM : WeatherViewModel = WeatherViewModel()
+    
     var body: some View {
         VStack {
             // Card at the top
@@ -45,7 +47,8 @@ struct DestinationView: View {
             if showDetailContent {
                 // Additional content
                 Text(card.description)
-                    .font(.body)
+                    .font(.roboto(.medium, size: 14))
+                    .lineSpacing(10)
                     .padding()
                     .transition(.opacity)
             }
@@ -53,6 +56,9 @@ struct DestinationView: View {
             Spacer()
         }
         .ignoresSafeArea()
+        .onAppear{
+            weatherVM.fetchWeather(for: card.title)
+        }
     }
 }
 
