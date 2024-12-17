@@ -14,9 +14,6 @@ struct DestinationsSelectionView: View {
         VStack {
             if let _ = locationManager.userLocation {
                 Globe3DView(userLocation: $locationManager.userLocation)
-                    .onAppear{
-                        print("Coords -- \(String(describing: locationManager.userLocation))")
-                    }
             }
             
         }
