@@ -36,6 +36,8 @@
 		A98736BD2C9AE2E300ED4F60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98736BC2C9AE2E300ED4F60 /* ContentView.swift */; };
 		A98736BF2C9AE2E300ED4F60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98736BE2C9AE2E300ED4F60 /* Assets.xcassets */; };
 		A98736C22C9AE2E300ED4F60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98736C12C9AE2E300ED4F60 /* Preview Assets.xcassets */; };
+		A9C8AB702D2BDA88002EDA2D /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8AB6F2D2BDA87002EDA2D /* CountryModel.swift */; };
+		A9C8AB722D2BDD3C002EDA2D /* DestinationSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8AB712D2BDD3C002EDA2D /* DestinationSelectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		A98736BC2C9AE2E300ED4F60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A98736BE2C9AE2E300ED4F60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A98736C12C9AE2E300ED4F60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A9C8AB6F2D2BDA87002EDA2D /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		A9C8AB712D2BDD3C002EDA2D /* DestinationSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationSelectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -219,6 +223,7 @@
 			children = (
 				A919E2432D06CF6C005AAA8D /* WeatherModel.swift */,
 				A917B6062CFEFBC200A5EF48 /* CardsModel.swift */,
+				A9C8AB6F2D2BDA87002EDA2D /* CountryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			children = (
 				A919E2252D02F23D005AAA8D /* HomeViewModel.swift */,
 				A919E2452D06D10E005AAA8D /* WeatherViewModel.swift */,
+				A9C8AB712D2BDD3C002EDA2D /* DestinationSelectionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -318,7 +324,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A917B6072CFEFBC800A5EF48 /* CardsModel.swift in Sources */,
+				A9C8AB722D2BDD3C002EDA2D /* DestinationSelectionViewModel.swift in Sources */,
 				A924FF312D09913B00D61746 /* DestinationsSelectionView.swift in Sources */,
+				A9C8AB702D2BDA88002EDA2D /* CountryModel.swift in Sources */,
 				A917B60F2D00363200A5EF48 /* View.swift in Sources */,
 				A919E2262D02F23D005AAA8D /* HomeViewModel.swift in Sources */,
 				A924FF2E2D0990F000D61746 /* Globe3DView.swift in Sources */,
