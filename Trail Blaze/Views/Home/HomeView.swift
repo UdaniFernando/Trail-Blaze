@@ -27,6 +27,7 @@ struct HomeView: View {
                 // Home View
                 
                 VStack{
+                    Spacer()
                     homeCardView()
                     
                     Spacer()
@@ -53,12 +54,12 @@ struct HomeView: View {
     }
     
     
-    
-    
-    @ViewBuilder func homeCardView() -> some View{
+    @ViewBuilder
+    func homeCardView() -> some View {
         ZStack {
             ForEach(homeVM.cards.indices, id: \.self) { index in
-                CardView(card: homeVM.cards[index])
+                let card = homeVM.cards[index]
+                CardView(card: card)
                     .frame(width: 200, height: 300)
                     .scaleEffect(index == selectedIndex ? 1.0 : 0.9)
                     .offset(
@@ -67,7 +68,11 @@ struct HomeView: View {
                     )
                     .zIndex(index == selectedIndex ? 1 : 0)
                     .animation(.spring(), value: selectedIndex)
-                    .matchedGeometryEffect(id: homeVM.cards[index].imageName.hashValue, in: animationNamespace)
+                    .matchedGeometryEffect(
+                        id: card.imageName.hashValue,
+                        in: animationNamespace,
+                        isSource: !navigateToDetail && index == selectedIndex
+                    )
                     .gesture(
                         DragGesture()
                             .onEnded { value in
@@ -87,11 +92,51 @@ struct HomeView: View {
         }
         .onAppear {
             if isFirstAppearance {
-                selectedIndex = Int(homeVM.cards.count / 2)
+                selectedIndex = homeVM.cards.count / 2
                 isFirstAppearance = false
             }
         }
     }
+
+    
+    
+//    @ViewBuilder func homeCardView() -> some View{
+//        ZStack {
+//            ForEach(homeVM.cards.indices, id: \.self) { index in
+//                CardView(card: homeVM.cards[index])
+//                    .frame(width: 200, height: 300)
+//                    .scaleEffect(index == selectedIndex ? 1.0 : 0.9)
+//                    .offset(
+//                        x: CGFloat(index - selectedIndex) * 40,
+//                        y: CGFloat(abs(index - selectedIndex)) * 20
+//                    )
+//                    .zIndex(index == selectedIndex ? 1 : 0)
+//                    .animation(.spring(), value: selectedIndex)
+//                    .matchedGeometryEffect(id: homeVM.cards[index].imageName.hashValue, in: animationNamespace)
+//                    .gesture(
+//                        DragGesture()
+//                            .onEnded { value in
+//                                let threshold: CGFloat = 100
+//                                if value.translation.width < -threshold, selectedIndex < homeVM.cards.count - 1 {
+//                                    selectedIndex += 1
+//                                } else if value.translation.width > threshold, selectedIndex > 0 {
+//                                    selectedIndex -= 1
+//                                } else if value.translation.height < -threshold, index == selectedIndex {
+//                                    withAnimation(.easeInOut) {
+//                                        navigateToDetail = true
+//                                    }
+//                                }
+//                            }
+//                    )
+//            }
+//        }
+//        .onAppear {
+//            if isFirstAppearance {
+//                selectedIndex = Int(homeVM.cards.count / 2)
+//                isFirstAppearance = false
+//            }
+//        }
+//    }
     
     @ViewBuilder func startATrailButtonView () -> some View {
        

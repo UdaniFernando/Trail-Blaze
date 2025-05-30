@@ -69,20 +69,11 @@ struct Globe3DView: UIViewRepresentable {
             
             globeNode.rotation = SCNVector4(1, 0, 0, -rotationX)
             globeNode.rotation = SCNVector4(0, 1, 0, -rotationY)
-            
-            //            let pinImage = UIImage(named: "country_pin")
-            //            let pinGeometry = SCNPlane(width: 0.05, height: 0.05) // Adjust pin size as needed
-            //
-            //            let pinMaterial = SCNMaterial()
-            //            pinMaterial.diffuse.contents = pinImage
-            //            pinMaterial.isDoubleSided = true // Ensures visibility from all angles
-            //            pinGeometry.materials = [pinMaterial]
+          
             
             let pinNode = SCNNode(geometry: SCNSphere(radius: 0.01))
             pinNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
             
-            //            let pinNode = SCNNode(geometry: pinGeometry)
-            //            pinNode.constraints = [SCNBillboardConstraint()]
             
             let x = cos(latitude) * sin(longitude)
             let y = sin(latitude)
@@ -104,7 +95,7 @@ struct Globe3DView: UIViewRepresentable {
         
         print("Update Globe3D UI View")
         
-        print("Selected Country X -- \(selectedCountry)")
+        print("Selected Country X -- \(String(describing: selectedCountry))")
         
         guard let country = selectedCountry, let globeNode = context.coordinator.globeNode else { return }
         

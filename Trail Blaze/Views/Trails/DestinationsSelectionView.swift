@@ -19,7 +19,7 @@ struct DestinationsSelectionView: View {
             TextField("I'm going...", text: $searchText)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
-                .onChange(of: searchText) { _ in
+                .onChange(of: searchText) { _, _ in
                     filterCountries()
                 }
 

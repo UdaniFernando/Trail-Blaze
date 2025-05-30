@@ -21,7 +21,7 @@ struct DestinationView: View {
         VStack {
             // Card at the top
             CardView(card: card, isOnStack: false)
-                .frame(height: 300)
+                .frame(width: getScreenWidth() ,height: 300)
                 .matchedGeometryEffect(id: card.imageName.hashValue, in: animationNamespace)
                 .offset(y: dragOffset)
                 .gesture(
